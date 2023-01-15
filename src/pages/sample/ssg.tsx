@@ -20,6 +20,12 @@ const SSG: NextPage<SSGProps> = (props) => {
   );
 };
 
+/**
+ * MEMO
+ * SSG（Static Site Generation）はビルド時にAPIからデータを取得し、ページを描写、静的ファイルとして保持する
+ *
+ * getStaticPropsを非同期関数として定義し、exportする事でSSGを作成できる
+ */
 export const getStaticProps: GetStaticProps<SSGProps> = async (context) => {
   const timestamp = new Date().toLocaleString();
   const message = `${timestamp}にgetStaticPropsが実行されました。`;
